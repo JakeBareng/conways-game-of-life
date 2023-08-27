@@ -3,7 +3,7 @@
 function Board() {
     return (
         <div>
-            grid
+            {}
         </div>
     )
 }
