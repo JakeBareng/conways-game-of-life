@@ -19,17 +19,11 @@ const gridSlice = createSlice({
         toggleCell: (state, action: PayloadAction<[number, number]>) => {
             const [x, y] = action.payload;
             const coord = `${x},${y}`;
-            return {
-                ...state,
-                grid: {
-                    ...state.grid,
-                    [coord]: !state.grid[coord]
-                }
-            };
+            state.grid[coord] = !state.grid[coord];
         },
         createGridSize: (state, action: PayloadAction<[number, number]>) => {
             const [sizeX, sizeY] = action.payload;
-            const newGrid: Record<string,boolean> = {};
+            const newGrid: Record<string, boolean> = {};
             for (let i = 0; i < sizeX; i++) {
                 for (let j = 0; j < sizeY; j++) {
                     newGrid[`${i},${j}`] = false;
@@ -40,7 +34,7 @@ const gridSlice = createSlice({
                 x: sizeX,
                 y: sizeY
             }
-        }
+        },
     },
 });
 

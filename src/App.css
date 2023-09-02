@@ -40,3 +40,22 @@
 .read-the-docs {
   color: #888;
 }
+
+.cell {
+  display: flex ;
+  width: 10px;
+  height: 10px;
+  justify-content: center;
+}
+.grid-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  grid-template-columns: repeat(10, 1fr);
+}
+.clickable {
+  cursor: pointer;
+}

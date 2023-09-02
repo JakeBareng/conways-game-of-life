@@ -1,6 +1,3 @@
-import { AnyAction, Dispatch } from '@reduxjs/toolkit';
-import React from 'react';
-
 interface Props {
     toggle: () => void,
     occupied: boolean,
@@ -8,9 +5,14 @@ interface Props {
 
 const Cell = ({ toggle, occupied } : Props) => {
     return (
-        <div onClick={toggle}>
-            *
+        <div className="cell clickable">
+        {occupied 
+            ? <div onClick={toggle}> * </div>
+            : <div onClick={toggle}> - </div>
+        }            
         </div>
+
+
     );
 };
 
