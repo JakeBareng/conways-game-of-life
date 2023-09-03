@@ -35,10 +35,13 @@ const gridSlice = createSlice({
                 y: sizeY
             }
         },
+        modifyGrid: (state, action: PayloadAction<Record<string,boolean>>) => {
+            state.grid = action.payload;
+        }
     },
 });
 
 
-export const { toggleCell, createGridSize } = gridSlice.actions;
+export const { toggleCell, createGridSize, modifyGrid } = gridSlice.actions;
 
 export default gridSlice.reducer;
