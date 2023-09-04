@@ -21,8 +21,8 @@ const checkCells = (grid: Record<string, boolean> ): Record<string,boolean> => {
         const [x, y] = coord.split(",").map(Number);
         const isAlive = grid[coord];
         const neighbours = countNeighbours(x, y, grid);
-        if (!isAlive && neighbours == 3) grid[coord] = true;
-        else if (isAlive && (neighbours > 3 || neighbours < 2)) grid[coord] = false;
+        if (!isAlive && neighbours == 3) gridCopy[coord] = true;
+        else if (isAlive && (neighbours > 3 || neighbours < 2)) gridCopy[coord] = false;
     })
     return gridCopy;
 }
