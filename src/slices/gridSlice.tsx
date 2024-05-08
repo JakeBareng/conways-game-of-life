@@ -21,7 +21,7 @@ const gridSlice = createSlice({
             const coord = `${x},${y}`;
             state.grid[coord] = !state.grid[coord];
         },
-        createGridSize: (state, action: PayloadAction<[number, number]>) => {
+        createGridSize: (_state, action: PayloadAction<[number, number]>) => {
             const [sizeX, sizeY] = action.payload;
             const newGrid: Record<string, boolean> = {};
             for (let i = 0; i < sizeX; i++) {
