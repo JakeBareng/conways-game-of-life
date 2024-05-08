@@ -6,7 +6,7 @@ import { checkCells } from "./util/boardUtil";
 import Cell from "./cell";
 
 function Board() {
-    let gridData = useSelector(((state: gridState) => state.grid));
+    const gridData = useSelector(((state: gridState) => state.grid));
     const dispatch = useDispatch();
     const [isRunning, setIsRunning] = useState<boolean>(false);
     const [size, setSize] = useState<number>(10);
@@ -59,7 +59,7 @@ function Board() {
         return map;
     }
 
-    let cellElements = renderGrid();
+    const cellElements = renderGrid();
     return (
         <>
 
@@ -81,6 +81,6 @@ function Board() {
 
     )
 
-};
+}
 
 export default Board;

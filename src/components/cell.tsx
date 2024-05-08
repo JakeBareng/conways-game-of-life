@@ -7,8 +7,8 @@ const Cell = ({ toggle, occupied } : Props) => {
     return (
         <div className="cell clickable">
         {occupied 
-            ? <div onClick={toggle}> * </div>
-            : <div onClick={toggle}> - </div>
+            ? <div className="cell-active" onClick={toggle}></div>
+            : <div className="cell-empty" onClick={toggle}></div>
         }            
         </div>
 

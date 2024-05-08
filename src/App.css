@@ -41,12 +41,24 @@
   color: #888;
 }
 
-.cell {
+.cell-empty {
   display: flex ;
   width: 10px;
   height: 10px;
   justify-content: center;
+  background-color: rgb(91, 84, 84);
+  border-radius: 20%;
 }
+
+.cell-active {
+  display: flex ;
+  width: 10px;
+  height: 10px;
+  justify-content: center;
+  background-color: rgb(63, 42, 166);
+  border-radius: 20%;
+}
+
 .grid-container {
   display: grid;
   justify-items: center;
