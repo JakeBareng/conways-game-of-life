@@ -9,10 +9,11 @@ function Board() {
     let gridData = useSelector(((state: gridState) => state.grid));
     const dispatch = useDispatch();
     const [isRunning, setIsRunning] = useState<boolean>(false);
+    const [size, setSize] = useState<number>(10);
 
     useEffect(() => {
-        dispatch(createGridSize([10, 10]));
-    }, [dispatch]);
+        dispatch(createGridSize([size, size]));
+    }, [dispatch, size]);
 
     useEffect(() => {
         let intervalId: NodeJS.Timeout | null = null;
@@ -61,11 +62,19 @@ function Board() {
     let cellElements = renderGrid();
     return (
         <>
-            <button onClick={toggleTimer}>
-                {isRunning? "stop" : "start"}
-            </button>
-            {/* <button onClick={toggleTimer}>stop</button> */}
-            <div className="grid-container">
+
+            <div className="controls">
+                <button onClick={toggleTimer}>
+                    {isRunning ? "stop" : "start"}
+                </button>
+                <input type="number" value={size} onChange={(e) => setSize(Number(e.target.value))} />
+
+            </div>
+            <div className="grid-container"
+                style={
+                    { "gridTemplateColumns": `repeat(${size}, 1fr)` }
+                }
+            >
                 {Object.values(cellElements)}
             </div>
         </>
