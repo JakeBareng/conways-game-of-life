@@ -4,6 +4,7 @@ conway's game of life simulator using redux toolkit
 
 # live demo
 https://jakebareng.github.io/conways-game-of-life/
+![image](https://github.com/JakeBareng/conways-game-of-life/assets/86535557/00cc5ca8-eaaa-436a-87f3-0b391dce7234)
 
 
 # React + TypeScript + Vite
