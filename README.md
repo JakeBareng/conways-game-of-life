@@ -1,3 +1,11 @@
+# Conway's Game of Life
+https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+conway's game of life simulator using redux toolkit
+
+# live demo
+https://jakebareng.github.io/conways-game-of-life/
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
