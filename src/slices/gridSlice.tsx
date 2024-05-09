@@ -21,18 +21,21 @@ const gridSlice = createSlice({
             const coord = `${x},${y}`;
             state.grid[coord] = !state.grid[coord];
         },
-        createGridSize: (_state, action: PayloadAction<[number, number]>) => {
-            const [sizeX, sizeY] = action.payload;
-            const newGrid: Record<string, boolean> = {};
-            for (let i = 0; i < sizeX; i++) {
-                for (let j = 0; j < sizeY; j++) {
-                    newGrid[`${i},${j}`] = false;
+        createGridSize: {
+            reducer: (state, action: PayloadAction<[number, number]>) => {
+                const [sizeX, sizeY] = action.payload;
+                const newGrid: Record<string, boolean> = {};
+                for (let i = 0; i < sizeX; i++) {
+                    for (let j = 0; j < sizeY; j++) {
+                        newGrid[`${i},${j}`] = false;
+                    }
                 }
-            }
-            return {
-                grid: newGrid,
-                x: sizeX,
-                y: sizeY
+                state.grid = newGrid;
+                state.x = sizeX;
+                state.y = sizeY;
+            },
+            prepare: (size: [number, number]) => {
+                return { payload: size, type: 'grid/createGridSize' };
             }
         },
         modifyGrid: (state, action: PayloadAction<Record<string,boolean>>) => {
